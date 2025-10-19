@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手机能力雷达图</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>手机能力雷达图</h1>
+            <p class="subtitle">黑夜总隐藏凶险，每款电脑 0.5 ~ 5分每个维度比</p>
+            <div class="header-actions">
+                <a href="editor.html" class="btn-editor">📝 打开数据编辑器</a>
+                <button id="clear-editor-data" class="btn-clear" style="display:none;">🔄 恢复默认数据</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- 综合对比图 -->
+            <div class="chart-section main-chart">
+                <h2>综合对比</h2>
+                <div class="chart-container">
+                    <canvas id="mainRadarChart"></canvas>
+                </div>
+                
+                <!-- 图例和控制 -->
+                <div class="legend-section">
+                    <h3>选择参与对比的机型</h3>
+                    <div id="phoneLegend" class="phone-legend"></div>
+                </div>
+            </div>
+
+            <!-- 单个手机详情 -->
+            <div class="individual-charts">
+                <div class="section-header">
+                    <div>
+                        <h2>单机详情</h2>
+                        <p class="export-hint">点击图表右上角的下载按钮可导出单个雷达图（不含型号标题）</p>
+                    </div>
+                    <button id="batch-export-btn" class="btn-batch-export">📦 批量导出所有图片</button>
+                </div>
+                <div id="individualCharts" class="charts-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
